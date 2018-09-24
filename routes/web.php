@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Those route should be in api.php
+Route::get('movie', 'MovieController@list')->name('movie.list');
+Route::get('movie/{movie}', 'MovieController@show')->name('movie.show'); // this route should be a post to movie
+Route::get('person', 'PersonController@list')->name('person.list');
+Route::get('person/{person}', 'PersonController@show')->name('person.show');

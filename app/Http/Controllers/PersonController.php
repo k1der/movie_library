@@ -12,6 +12,6 @@ class PersonController extends Controller
         return json_encode($persons);
     }
     public function show(Person $person) {
-        return json_encode($person->movies[0]->pivot->job);
+        return json_encode($person);
     }
 }

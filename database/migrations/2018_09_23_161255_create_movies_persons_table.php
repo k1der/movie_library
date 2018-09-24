@@ -17,7 +17,7 @@ class CreateMoviesPersonsTable extends Migration
             $table->increments('id');
             $table->integer('movie_id')->unsigned();
             $table->integer('person_id')->unsigned();
-            $table->integer('as')->unsigned();
+            $table->integer('job')->unsigned();
             $table->timestamps();
         });
     }

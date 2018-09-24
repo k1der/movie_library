@@ -135,7 +135,7 @@ class InsertMovie extends Command
                         $person_to_insert->save();
                     }
                     $person = Person::where('name', '=', $actor['name'])->first();
-                    $movie->persons()->attach($person, array('as' => 1));
+                    $movie->persons()->attach($person, array('job' => 1));
                 }
                 foreach ($movie_details['credits']['crew'] as $member) {
                     $member_detail = $this->find_person_by_id($member['id']);
@@ -146,7 +146,7 @@ class InsertMovie extends Command
                         $person_to_insert->save();
                     }
                     $person = Person::where('name', '=', $member['name'])->first();
-                    $movie->persons()->attach($person, array('as' => 2));
+                    $movie->persons()->attach($person, array('job' => 2));
                 }
                 break;
             } else {

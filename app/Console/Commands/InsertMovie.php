@@ -126,6 +126,7 @@ class InsertMovie extends Command
                     $movie_to_insert->save();
                 }
                 $movie = Movie::where('title', '=', $result['title'])->first();
+                // Now that we have created $movie function add_person, we should use it here also.
                 foreach ($movie_details['credits']['cast'] as $actor) {
                     $actor_detail = $this->find_person_by_id($actor['id']);
                     if ( !(Person::where('name', '=', $actor['name'])->exists()) ) {
